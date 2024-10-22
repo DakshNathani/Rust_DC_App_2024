@@ -9,6 +9,7 @@ There are links attached to each title, for you to read up and understand what t
     ```rust
     fn main() {
         // Write your code here
+    	println!("Hello, World!");
     }
     ```
     
@@ -17,6 +18,15 @@ There are links attached to each title, for you to read up and understand what t
 	```rust
 	fn main() {
 		for n in 1..=100 {
+ 			if n % 3 == 0{
+ 				println!("Fizz");
+ 			}else if n % 5 == 0{
+ 				println!("Buzz");
+ 			}else if n % 3 == 0 and n % 5 ==0{
+ 				println!("FizzBuzz")
+ 			}else{
+		            println!("{}", i);
+		        }
 		}
 	}
 	```
