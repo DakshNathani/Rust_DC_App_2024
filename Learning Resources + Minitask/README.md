@@ -40,10 +40,10 @@ There are links attached to each title, for you to read up and understand what t
         	// What should we check here?
  		if val == target {
  			return Some(i);
- 		}
-    	}
+ 			}
+    		}
     	// What should we return here?
- 	None
+ 		None
 	}
 	```
 	
