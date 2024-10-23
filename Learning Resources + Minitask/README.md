@@ -35,11 +35,15 @@ There are links attached to each title, for you to read up and understand what t
 	A very common design question, iswhat to return when nothing is there to return? For example, in a tree data structure, what do we return as a child of a node, when the node has no children? In C++, we usually return a `nullptr`, but this can lead to a myriad of issues - trying to dereference a `nullptr` just being one of them. This question has two subparts.
 	a) Find an element in an array: 
 	```rust
-	fn find_element(arr: &[i32], target: i32) -> /*what should the return type be?*/ {
+	fn find_element(arr: &[i32], target: i32) -> Option<usize> {
     	for (i, &val) in arr.iter().enumerate() {
         	// What should we check here?
+ 		if val == target {
+ 			return Some(i);
+ 		}
     	}
     	// What should we return here?
+ 	None
 	}
 	```
 	
@@ -47,6 +51,12 @@ There are links attached to each title, for you to read up and understand what t
 	```rust
 	let numbers = vec![1, 2, 3, 4, 5];
 	// Fill in your code here
+ 	let n = find_element(&arr,19);
+ 	match index{
+ 		Some(i) = println!("index : {}",i),
+ 		None => println!("Not Found"),
+ 		}
+ 	}
 	```
 	
 4. [**Owners and Borrowers**](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html)
