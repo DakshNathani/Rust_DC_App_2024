@@ -1,13 +1,12 @@
 use std::fmt;
 
 struct Game {
-    overs: Vec<Vec<i32>>, // Store runs for each over (each over is a Vec<i32>)
-    total_score: i32,     // Store the final score
-    extra_overs: i32,     // Track the number of extra overs needed
+    overs: Vec<Vec<i32>>
+    total_score: i32,     
+    extra_overs: i32,     
 }
 
 impl Game {
-    // Constructor to create a new game with empty overs
     fn new() -> Self {
         Game {
             overs: Vec::new(),
@@ -16,7 +15,6 @@ impl Game {
         }
     }
 
-    // Bat method: add runs for each ball in the current over
     fn bat(&mut self, runs: Vec<i32>) {
         if runs.len() != 6 {
             panic!("An over must have exactly 6 balls.");
@@ -24,7 +22,6 @@ impl Game {
         self.overs.push(runs);
     }
 
-    // Calculate the total score based on the runs in each over
     fn score(&self) -> i32 {
         let mut total = 0;
         for over in &self.overs {
@@ -36,7 +33,6 @@ impl Game {
     }
 }
 
-// Implement fmt::Display to print the scorecard
 impl fmt::Display for Game {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         for (i, over) in self.overs.iter().enumerate() {
