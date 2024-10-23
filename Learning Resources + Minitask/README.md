@@ -36,14 +36,14 @@ There are links attached to each title, for you to read up and understand what t
 	a) Find an element in an array: 
 	```rust
 	fn find_element(arr: &[i32], target: i32) -> Option<usize> {
-    	for (i, &val) in arr.iter().enumerate() {
-        	// What should we check here?
- 		if val == target {
- 			return Some(i);
- 			}
-    		}
-    	// What should we return here?
- 		None
+	    	for (i, &val) in arr.iter().enumerate() {
+	        	// What should we check here?
+	 		if val == target {
+	 			return Some(i);
+	 		}
+	 	}
+	    	// What should we return here?
+	 	None
 	}
 	```
 	
@@ -65,7 +65,7 @@ There are links attached to each title, for you to read up and understand what t
 	```rust
 	fn main() {
     	let s1 = String::from("Hello");
-    	let s2 = //??? Borrow s1
+    	let s2 = &s1 //??? Borrow s1
     }
     ```
     
