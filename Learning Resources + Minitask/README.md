@@ -60,7 +60,7 @@ There are links attached to each title, for you to read up and understand what t
 	```
 	
 4. [**Owners and Borrowers**](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html)
-	Ownership is a fundamental concept of Rust. This ensures a variable can only be changed at one place at a time, and other references to that can only be immutable. Here are some questions to test your understanding about ownership and borrowing.
+	Ownership is a fundamental concept of Rust. This ensures a variable can only be changed at one place at a time, and other references to that can only be immutable. Here are some questions to test your understanding about ownership and borrowing. 
 	a) How do I borrow?
 	```rust
 	fn main() {
@@ -70,6 +70,7 @@ There are links attached to each title, for you to read up and understand what t
     ```
     
     b) What is wrong here? Why?
+   Ans: the problem with this code is s1 is transferring its ownership to s2. So we wont be able to access data from s1 and if we access s1 we will get an error. When we assign s1 to s2, the String data is copied, meaning we copy the pointer, the length, and the capacity that are on the stack. We do not copy the data on the heap that the pointer refers to. To ensure memory safety, after the line let s2 = s1;, Rust considers s1 as no longer valid.
     ```rust
     fn main() {
     	let s1 = String::from("Hello");
@@ -79,6 +80,7 @@ There are links attached to each title, for you to read up and understand what t
     ```
     
     c) I've seemed to get a hang on ownership, but this is tripping me up. What is this? What can it do? Are there any drawbacks? How is it different from borrowing or taking ownership?
+   Ans) This function takes S which is a mutable string and appends the data of the string without creating a new copy. Its drawback is can only do 1 mutable borrowing a a time. Taking ownership transfers full control of the data to the function, preventing further use in the caller unless ownership is returned. But this does not happens here
     ```rust
     fn modify_string(s: &mut String) {
     	s.push_str("This is pushed");
