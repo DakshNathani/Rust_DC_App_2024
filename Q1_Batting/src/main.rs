@@ -1,7 +1,7 @@
 use std::fmt;
 
 struct Game {
-    overs: Vec<Vec<i32>>
+    overs: Vec<Vec<i32>>,
     total_score: i32,     
     extra_overs: i32,     
 }
