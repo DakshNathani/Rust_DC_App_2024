@@ -51,7 +51,7 @@ There are links attached to each title, for you to read up and understand what t
 	```rust
 	let numbers = vec![1, 2, 3, 4, 5];
 	// Fill in your code here
- 	let n = find_element(&arr,19);
+ 	let index = find_element(&arr,19);
  	match index{
  		Some(i) => println!("index : {}",i),
  		None => println!("Not Found"),
