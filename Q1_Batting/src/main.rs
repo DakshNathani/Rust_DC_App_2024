@@ -38,15 +38,15 @@ impl fmt::Display for Game {
         for (i, over) in self.overs.iter().enumerate() {
             write!(f, "Over {}: (", i + 1)?;
             for (j, &run) in over.iter().enumerate() {
-                 write!(f, "{}", run)?;
+                 write!(f, "{}", run)?; //appends the run
                 }
                 if j < 5 {
-                    write!(f, ", ")?; // Comma between balls
+                    write!(f, ", ")?; // no comma after last run
                 }
             }
             writeln!(f, ")")?;
         }
-        writeln!(f, "Final Score: {}", self.score())
+        writeln!(f, "Final Score: {}", self.score())//final score
     }
 }
 
