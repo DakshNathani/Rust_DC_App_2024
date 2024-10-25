@@ -38,10 +38,7 @@ impl fmt::Display for Game {
         for (i, over) in self.overs.iter().enumerate() {
             write!(f, "Over {}: (", i + 1)?;
             for (j, &run) in over.iter().enumerate() {
-                if run >= 4 {
-                    write!(f, "*{}", run)?; // Prefix boundaries with '*'
-                } else {
-                    write!(f, "{}", run)?;
+                 write!(f, "{}", run)?;
                 }
                 if j < 5 {
                     write!(f, ", ")?; // Comma between balls
