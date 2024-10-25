@@ -1,35 +1,35 @@
 use std::fmt;
 
-struct Game {
+struct Game { // creating a data structure
     overs: Vec<Vec<i32>>,
     total_score: i32,     
     extra_overs: i32,     
 }
 
-impl Game {
-    fn new() -> Self {
-        Game {
+impl Game { // implementing the data structure create
+    fn new() -> Self { // self is used for the same data structure
+        Game { //creates new empty vector and initializes everything to 0
             overs: Vec::new(),
             total_score: 0,
             extra_overs: 0,
         }
     }
 
-    fn bat(&mut self, runs: Vec<i32>) {
+    fn bat(&mut self, runs: Vec<i32>) { // to add runs as list
         if runs.len() != 6 {
             panic!("An over must have exactly 6 balls.");
         }
-        self.overs.push(runs);
+        self.overs.push(runs); // appends the list
     }
 
-    fn score(&self) -> i32 {
+    fn score(&self) -> i32 { // calculates the total score
         let mut total = 0;
         for over in &self.overs {
             for &run in over {
                 total += run;
             }
         }
-        total
+        total // will return the total
     }
 }
 
